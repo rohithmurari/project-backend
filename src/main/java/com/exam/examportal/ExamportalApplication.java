@@ -35,7 +35,7 @@ public class ExamportalApplication implements CommandLineRunner{
 		User user = new User();
 		user.setFirstName("Santhosh");
 		user.setLastName("Kumar S");
-		user.setUsername("santhosh");
+		user.setUsername("santhoshkumar");
 		user.setPassword(this.bCryptPasswordEncoder.encode("santhosh123"));
 		user.setEmail("santhosh.sourirajan@people10.com");
 
