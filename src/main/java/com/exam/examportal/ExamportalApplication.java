@@ -33,11 +33,11 @@ public class ExamportalApplication implements CommandLineRunner{
 		System.out.println("Starting code");
 
 		User user = new User();
-		user.setFirstName("Gaganasri");
-		user.setLastName("P");
-		user.setUsername("gaganasri");
-		user.setPassword(this.bCryptPasswordEncoder.encode("gagana123"));
-		user.setEmail("gagana@gmail.com");
+		user.setFirstName("Santhosh");
+		user.setLastName("Kumar S");
+		user.setUsername("santhosh");
+		user.setPassword(this.bCryptPasswordEncoder.encode("santhosh123"));
+		user.setEmail("santhosh.sourirajan@people10.com");
 
 		Role role1 = new Role();
 		role1.setRoleId(46L);
