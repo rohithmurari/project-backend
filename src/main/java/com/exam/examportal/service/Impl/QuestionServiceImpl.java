@@ -1,12 +1,16 @@
 package com.exam.examportal.service.Impl;
 
+import java.io.IOException;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.exam.examportal.Repo.QuestionRepository;
+import com.exam.examportal.helper.ExcelHelper;
 import com.exam.examportal.model.exam.Question;
 import com.exam.examportal.model.exam.Quiz;
 import com.exam.examportal.service.QuestionService;
@@ -58,6 +62,18 @@ public class QuestionServiceImpl implements QuestionService{
 		// TODO Auto-generated method stub
 		return this.questionRepository.getOne(questionsId);
 	}
+	
+	@Override
+	public void saveFromExcel(MultipartFile file) {
+
+        try {
+            List<Question> questions = ExcelHelper.convertExcelToListOfProduct(file.getInputStream());
+            this.questionRepository.saveAll(questions);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 	
 	
 
