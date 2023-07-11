@@ -20,7 +20,7 @@ public class ResultController {
     @PostMapping("/exam")
     public ResponseEntity<?> addResult(@RequestBody Result result)
     {
-        System.out.println("HEllo result");
+        //System.out.println("HEllo result");
         Result result1=this.resultservice.addResult(result);
         return ResponseEntity.ok(result1);
     }
@@ -52,13 +52,13 @@ public class ResultController {
 
     }
 
-//    @GetMapping("/{id}")
-//    public ResponseEntity<?> getResultOfUser(@PathVariable("id") long id)
-//    {
-//        User user1=new User();
-//        user1.setId(id);
-//        List<Result>lis=this.resultservice.getResultOfUser(user1);
-//        return ResponseEntity.ok(lis);
-//
-//    }
+    @GetMapping("/user/{id}")
+    public ResponseEntity<?> getResultOfUser(@PathVariable("id") long id)
+    {
+        User user1=new User();
+        user1.setId(id);
+        List<Result>lis=this.resultservice.getResultOfUser(user1);
+        return ResponseEntity.ok(lis);
+
+    }
 }
