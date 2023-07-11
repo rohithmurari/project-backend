@@ -25,7 +25,7 @@ public class ExcelHelper {
         }
 
     }
-    
+
   //convert excel to list of questions
 
     public static List<Question> convertExcelToListOfProduct(InputStream is) {
@@ -59,7 +59,7 @@ public class ExcelHelper {
                     Cell cell = cells.next();
 
                     switch (cid) {
-                    
+
                         case 1:
                             q.setAnswer(cell.getStringCellValue());
                             break;
